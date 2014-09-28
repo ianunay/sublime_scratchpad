@@ -1,22 +1,25 @@
 # Sublime Scratchpad
 
-Easy to use Note taking tool for your sublime text.
+Easy to use Note taking tool for Sublime Text.
 
 ## Motivation
 
-Sublime text is a great text editor and it can be used to write down your random musings, quick notes while you code :)
+Sublime text is a great text editor and it can be used to write down your important notes, todo lists and random musings while you code :)
 
 I keep finding myself creating a new file every time using 'Ctrl+n' to write down something. Saving and managing these files is a pain.
 
 ## Solution
 
-This plugin maintains a scratchpad file which you can open using 'Ctrl+alt+n' to view the contents of the file.
+This plugin maintains a single scratchpad file which you can open using 'Ctrl+alt+n' to view the contents of the file.
 
 Hitting 'Ctrl+Space' will open and add a time-stamp at the end of the file where you can start typing your stuff.
 
 ex:
-Fri Sep 26 12:17:57 2014 :
-"Start Typing your text here"
+'''
+Sun Sep 28 11:34:58 2014 :
+========================
+" You can start typing from here "
+'''
 
 This will help you stay organized with all your notes, as it will allow you to easily search your file contents. The time-stamp is a very useful feature to organize your notes.
 
