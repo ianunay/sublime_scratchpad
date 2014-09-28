@@ -20,21 +20,28 @@ headerText = """
 
 class OpenscratchpadCommand(WindowCommand):
   def run(self):
-    global scratchpadFile, headerText
-    if not isfile(scratchpadFile):
-      with open(scratchpadFile, "a") as scratchFile:
-        scratchFile.write(headerText)
+    global scratchpadFile
+    checkAndFillEmpty()
     self.window.open_file(scratchpadFile)
 
 class ScratchpadCommand(WindowCommand):
   def run(self):
     global scratchpadFile, headerText
-    timeStamp = "\n" + strftime("%c") + " : " + "\n" +"========================" + "\n"
-    if not isfile(scratchpadFile):
-      with open(scratchpadFile, "a") as scratchFile:
-        scratchFile.write(headerText)
-    with open(scratchpadFile, "a") as scratchFile:
-        scratchFile.write(timeStamp)
-    with open(scratchpadFile) as scratchFile:
-      count = sum(1 for line in scratchFile)
+    checkAndFillEmpty()
+    count = putTimeStamp()
     self.window.open_file(scratchpadFile+':'+str(count+1), ENCODED_POSITION)
+
+def checkAndFillEmpty():
+  global scratchpadFile, headerText
+  if not isfile(scratchpadFile):
+    with open(scratchpadFile, "a") as scratchFile:
+      scratchFile.write(headerText)
+
+def putTimeStamp():
+  global scratchFile
+  timeStamp = "\n" + strftime("%c") + " : " + "\n" +"========================" + "\n"
+  with open(scratchpadFile, "a") as scratchFile:
+      scratchFile.write(timeStamp)
+  with open(scratchpadFile) as scratchFile:
+    count = sum(1 for line in scratchFile)
+  return count
