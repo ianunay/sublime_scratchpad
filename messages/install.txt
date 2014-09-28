@@ -31,5 +31,6 @@ Sun Sep 28 11:34:58 2014 :
 ========================
 " You can start typing from here "
 
+You can also type "Scratch Pad" in command pannel(ctrl+shift+p) to edit the scratchpad file
 
 This will help you stay organized with all your notes, as it will allow you to easily search your file contents. The time-stamp is a very useful feature to organize your notes.

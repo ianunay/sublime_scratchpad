@@ -14,14 +14,23 @@ This plugin maintains a single scratchpad file which you can open using 'Ctrl+al
 
 Hitting 'Ctrl+Space' will open and add a time-stamp at the end of the file where you can start typing your stuff.
 
-ex:
-'''
+example
+
 Sun Sep 28 11:34:58 2014 :
-========================
-" You can start typing from here "
-'''
+- - - - - - - - - - - - -
+You can start typing from here
+
+
+You can also type "Scratch Pad" in command panel(ctrl+shift+p) to edit the scratchpad file
 
 This will help you stay organized with all your notes, as it will allow you to easily search your file contents. The time-stamp is a very useful feature to organize your notes.
+
+## Installation
+
+You can install this plugin from package control. Once you have package control installed type
+Install package in command panel. Search and select Scratchpad in the list.
+
+You can manually install this plugin by clonning or downloading this repository into Packages directory of your sublime text installation.
 
 
 ## License
