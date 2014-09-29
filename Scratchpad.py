@@ -1,10 +1,7 @@
 from sublime_plugin import WindowCommand, TextCommand
-from sublime import cache_path, run_command, ENCODED_POSITION
+from sublime import packages_path, run_command, ENCODED_POSITION
 from time import strftime
 from os.path import isfile
-from threading import Thread
-
-scratchpadFile = cache_path()[:-5]+'scratchpad.txt'
 
 headerText = """
     _____                _       _                     _
@@ -18,27 +15,27 @@ headerText = """
 
 """
 
-class OpenscratchpadCommand(WindowCommand):
+class OpenScratchpadCommand(WindowCommand):
   def run(self):
-    global scratchpadFile
-    checkAndFillEmpty()
+    scratchpadFile = packages_path()[:-8]+'scratchpad.txt'
+    checkAndFillEmpty(scratchpadFile)
     self.window.open_file(scratchpadFile)
 
 class ScratchpadCommand(WindowCommand):
   def run(self):
-    global scratchpadFile, headerText
-    checkAndFillEmpty()
-    count = putTimeStamp()
+    scratchpadFile = packages_path()[:-8]+'scratchpad.txt'
+    global headerText
+    checkAndFillEmpty(scratchpadFile)
+    count = putTimeStamp(scratchpadFile)
     self.window.open_file(scratchpadFile+':'+str(count+1), ENCODED_POSITION)
 
-def checkAndFillEmpty():
-  global scratchpadFile, headerText
+def checkAndFillEmpty(scratchpadFile):
+  global headerText
   if not isfile(scratchpadFile):
     with open(scratchpadFile, "a") as scratchFile:
       scratchFile.write(headerText)
 
-def putTimeStamp():
-  global scratchFile
+def putTimeStamp(scratchpadFile):
   timeStamp = "\n" + strftime("%c") + " : " + "\n" +"========================" + "\n"
   with open(scratchpadFile, "a") as scratchFile:
       scratchFile.write(timeStamp)
