@@ -14,11 +14,10 @@ This plugin maintains a single scratchpad file which you can open using 'Ctrl+al
 
 Hitting 'Ctrl+Space' will open and add a time-stamp at the end of the file where you can start typing your stuff.
 
-example
+Example Screenshot:
 
-Sun Sep 28 11:34:58 2014 :
-- - - - - - - - - - - - -
-You can start typing from here
+![alt tag](https://cloud.githubusercontent.com/assets/1129363/7337007/6ce6d3ba-ec0f-11e4-9aa3-b4b0906537c0.png)
+
 
 
 You can also type "Scratch Pad" in command panel(ctrl+shift+p) to edit the scratchpad file
