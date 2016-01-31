@@ -36,7 +36,7 @@ def checkAndFillEmpty(scratchpadFile):
       scratchFile.write(headerText)
 
 def putTimeStamp(scratchpadFile):
-  timeStamp = "\n" + strftime("%c") + " : " + "\n" +"========================" + "\n"
+  timeStamp = "\n\n" + strftime("%c") + " : " + "\n" +"========================" + "\n"
   with open(scratchpadFile, "a") as scratchFile:
       scratchFile.write(timeStamp)
   with open(scratchpadFile) as scratchFile:
